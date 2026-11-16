@@ -6,7 +6,8 @@
     "apps/server"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev:server": "npm run dev -w apps/server",
+    "dev:desktop": "npm run dev -w apps/desktop"
   },
   "license": "ISC"
 }
