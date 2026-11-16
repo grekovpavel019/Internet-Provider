@@ -1,3 +1,4 @@
+```
 internet-provider/
 │
 ├── apps/
@@ -60,3 +61,4 @@ internet-provider/
 ├── .gitignore
 ├── package.json                 # Управление монорепозиторием
 └── tsconfig.base.json           # Общие настройки TS
+```
