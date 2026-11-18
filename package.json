@@ -4,7 +4,8 @@
   "private": true,
   "workspaces": [
     "apps/server",
-    "apps/desktop"
+    "apps/desktop",
+    "packages/shared"
   ],
   "scripts": {
     "dev:server": "npm run dev -w apps/server",
