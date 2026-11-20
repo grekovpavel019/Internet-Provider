@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@internet-provider/shared": "file:../../packages/shared",
     "react": "^19.3.1",
     "react-dom": "^19.3.1"
   },
