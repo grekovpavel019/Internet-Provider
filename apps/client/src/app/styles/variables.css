@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@theme {
+  /* Background */
+  --color-background: #f6f9fa;
+  --color-surface: #ffffff;
+  --color-surface-hover: #f0f5f5;
+  --color-surface-muted: #eaf1f2;
+
+  /* Text */
+  --color-foreground: #18343d;
+  --color-text-secondary: #58727b;
+  --color-text-muted: #8499a0;
+
+  /* Brand */
+  --color-primary: #269f88;
+  --color-primary-hover: #1e8673;
+  --color-primary-foreground: #ffffff;
+  --color-primary-soft: #e5f5f0;
+
+  /* Secondary */
+  --color-secondary: #2d718f;
+  --color-secondary-hover: #235a73;
+  --color-secondary-soft: #e8f2f7;
+
+  /* Semantic */
+  --color-success: #23865e;
+  --color-success-soft: #e6f5ed;
+
+  --color-warning: #b77b19;
+  --color-warning-soft: #fff5df;
+
+  --color-danger: #c24747;
+  --color-danger-hover: #a53636;
+  --color-danger-soft: #fceaea;
+
+  /* Borders */
+  --color-border: #dde7e9;
+  --color-border-soft: #edf2f3;
+
+  /* Fonts */
+  --font-sans: "Inter", sans-serif;
+  --font-heading: "Manrope", sans-serif;
+
+  /* Border radius */
+  --radius-button: 0.5rem;
+  --radius-input: 0.5rem;
+  --radius-card: 0.75rem;
+  --radius-panel: 1rem;
+
+  /* Shadows */
+  --shadow-card: 0 4px 18px rgb(18 56 64 / 5%);
+  --shadow-panel: 0 8px 30px rgb(18 56 64 / 8%);
+
+  /* Layout */
+  --spacing-sidebar: 260px;
+  --spacing-header: 64px;
+}
+
+:root {
+  /* Global layout */
+  --page-padding-x: 28px;
+  --page-padding-y: 24px;
+
+  /* Components */
+  --button-height: 40px;
+  --input-height: 42px;
+
+  /* Focus */
+  --focus-ring: 0 0 0 3px rgb(38 159 136 / 20%);
+}
