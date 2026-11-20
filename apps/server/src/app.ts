@@ -1,5 +1,4 @@
 import express, { type Express, type Response, type Request } from "express";
-import { timeStamp } from "node:console";
 
 const app: Express = express();
 
