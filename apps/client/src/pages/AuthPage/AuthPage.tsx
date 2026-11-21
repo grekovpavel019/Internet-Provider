@@ -1,4 +1,5 @@
 import React from "react";
+import AuthForm from "@features/auth/AuthForm";
 
 const AuthPage = (): React.JSX.Element => {
     return (
@@ -6,6 +7,7 @@ const AuthPage = (): React.JSX.Element => {
             <h1>
                 Авторизация
             </h1>
+            <AuthForm />
         </main>
     );
 };
