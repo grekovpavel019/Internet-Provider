@@ -1,11 +1,10 @@
 import React from "react";
 import AuthForm from "@features/auth/AuthForm";
 
-import styles from "./AuthPage.module.scss";
 
 const AuthPage = (): React.JSX.Element => {
     return (
-        <main className={styles.page}>
+        <main className="h-screen flex justify-center items-center overflow-hidden">
             <AuthForm />
         </main>
     );
