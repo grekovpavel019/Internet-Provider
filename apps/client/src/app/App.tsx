@@ -9,12 +9,18 @@ import "./styles/index.css"
 
 import AuthPage from "@pages/AuthPage";
 
+import MainLayout from "./layouts/MainLayout";
+import DashboardPage from "@pages/DashboardPage";
+
 const App = (): React.JSX.Element => {
     return (
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={ <AuthPage />} />
-                <Route path="/panel" />
+                
+                <Route element={ <MainLayout /> }>
+                    <Route path="/main" element={ <DashboardPage /> } />
+                </Route>
             </Routes>
         </BrowserRouter>
     );
