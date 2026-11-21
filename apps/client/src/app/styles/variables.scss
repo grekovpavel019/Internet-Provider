@@ -1,0 +1,79 @@
+
+:root {
+    /* Global layout */
+    --page-padding-x: 28px;
+    --page-padding-y: 24px;
+
+    /* Background */
+    --color-background: #f5f7fa;
+    --color-auth-background: #eaf0f8;
+    --color-surface: #ffffff;
+    --color-surface-hover: #f8fafc;
+    --color-surface-muted: #f2f4f8;
+
+    /* Text */
+    --color-foreground: #192b46;
+    --color-text-secondary: #506788;
+    --color-text-muted: #8495ae;
+
+    /* Brand */
+    --color-primary: #2866d7;
+    --color-primary-hover: #2056bb;
+    --color-primary-foreground: #ffffff;
+    --color-primary-soft: #eaf2ff;
+
+    /* Secondary */
+    --color-secondary: #344e78;
+    --color-secondary-hover: #293e60;
+    --color-secondary-soft: #edf2f9;
+
+    /* Sidebar */
+    --color-sidebar: #192336;
+    --color-sidebar-hover: #25334b;
+    --color-sidebar-active: #2c4162;
+    --color-sidebar-foreground: #ffffff;
+    --color-sidebar-text: #c4d5ee;
+    --color-sidebar-muted: #819dc4;
+
+    /* Semantic */
+    --color-success: #168347;
+    --color-success-soft: #e7f7ed;
+
+    --color-warning: #956000;
+    --color-warning-soft: #fff9e9;
+
+    --color-danger: #c24747;
+    --color-danger-hover: #a53636;
+    --color-danger-soft: #fceaea;
+
+    /* Borders */
+    --color-border: #d5deea;
+    --color-border-soft: #edf1f6;
+    --color-border-strong: #b9c9df;
+
+    /* Fonts */
+    --font-sans: "Inter", sans-serif;
+    --font-heading: "Manrope", sans-serif;
+
+    /* Border radius */
+    --radius-button: 7px;
+    --radius-input: 7px;
+    --radius-card: 13px;
+    --radius-panel: 10px;
+
+    /* Shadows */
+    --shadow-card: 0 18px 48px #20345122;
+    --shadow-panel: 0 4px 16px rgb(32 52 81 / 5%);
+
+    /* Layout */
+    --spacing-sidebar: 245px;
+    --spacing-header: 64px;
+
+    /* Components */
+    --button-height: 40px;
+    --input-height: 42px;
+
+    /* Focus */
+    --focus-ring: 0 0 0 3px rgb(40 102 215 / 18%);
+    --color-focus: #2866d7;
+}

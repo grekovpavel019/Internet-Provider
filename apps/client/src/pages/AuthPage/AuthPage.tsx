@@ -1,12 +1,11 @@
 import React from "react";
 import AuthForm from "@features/auth/AuthForm";
 
+import styles from "./AuthPage.module.scss";
+
 const AuthPage = (): React.JSX.Element => {
     return (
-        <main className="min-h-screen flex items-center justify-center bg-backgound">
-            <h1>
-                Авторизация
-            </h1>
+        <main className={styles.page}>
             <AuthForm />
         </main>
     );

@@ -1,8 +1,8 @@
 import React from "react";
 
-import "./styles/index.css"
-import "./styles/reset.css"
-import "./styles/variables.css"
+import "./styles/index.scss"
+import "./styles/reset.scss"
+import "./styles/variables.scss"
 
 import AuthPage from "@pages/AuthPage";
 
