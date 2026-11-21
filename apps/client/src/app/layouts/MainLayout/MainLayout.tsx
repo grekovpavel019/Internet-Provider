@@ -6,10 +6,10 @@ import SidePanel from "@widgets/SidePanel";
 
 const MainLayout = (): React.JSX.Element => {
     return (
-        <div>
+        <div className="h-screen flex flex-row">
             <SidePanel />
 
-            <main>
+            <main className="w-full">
                 <Outlet />
             </main>
         </div>
