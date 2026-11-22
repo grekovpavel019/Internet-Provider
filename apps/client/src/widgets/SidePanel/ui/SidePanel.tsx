@@ -6,7 +6,7 @@ import { Link, NavLink } from "react-router";
 
 const SidePanel = (): React.JSX.Element => {
     return (
-        <aside className="w-60 shrink-0 bg-(--color-sidebar) text-(--color-sidebar-text)">
+        <aside className="w-60 flex flex-col shrink-0 bg-(--color-sidebar) text-(--color-sidebar-text)">
             <Link to="/main" className="p-6.25 flex items-center gap-4 outline-none">
                 <span className="text-[2rem] text-(--color-primary-hover)">
                     ◉
@@ -21,7 +21,7 @@ const SidePanel = (): React.JSX.Element => {
 
             <div className="nav-caption">УПРАВЛЕНИЕ</div>
 
-            <nav className="px-2.5 flex flex-col gap-[3px]">
+            <nav className="px-2.5 flex flex-col gap-0.75 overflow-y-scroll">
                 {
                     navigation.map((group) => (
                         <React.Fragment key={group.title}>
@@ -46,6 +46,10 @@ const SidePanel = (): React.JSX.Element => {
                     ))
                 }
             </nav>
+
+            <div className="px-5 py-4.5 border-t border-(--color-secondary-hover)">
+                <Link to="/" className="hover:underline">Выйти из системы</Link>
+            </div>
         </aside>
     );
 };

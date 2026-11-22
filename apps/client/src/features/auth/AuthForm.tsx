@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Link } from "react-router";
+
 import { ROLES } from "@packages/models/auth";
 
 const AuthForm = (): React.JSX.Element => {
@@ -23,9 +25,9 @@ const AuthForm = (): React.JSX.Element => {
                     }
                 </select>
                 
-                <button type="submit" className="px-3.75 py-2.75 text-[.9rem] text-(--color-primary-foreground) rounded-(--radius-button) bg-(--color-primary) transition-[filter] duration-100 ease-linear hover:brightness-95">
+                <Link to="/main" type="submit" className="px-3.75 py-2.75 text-[.9rem] text-(--color-primary-foreground) rounded-(--radius-button) bg-(--color-primary) transition-[filter] duration-100 ease-linear hover:brightness-95">
                     Войти в систему
-                </button>
+                </Link>
             </div>
         </form>
     );

@@ -26,4 +26,11 @@ export const navigation = [
             { label: "Типы подключения", path: "/connection-types" },
         ],
     },
+    {
+        title: "СИСТЕМА",
+        items: [
+            { label: "Журнал ошибок", path: "/error-logs" },
+            { label: "О программе", path: "/about-program" },
+        ]
+    }
 ];
