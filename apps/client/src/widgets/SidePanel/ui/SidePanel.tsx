@@ -1,6 +1,6 @@
 import React from "react";
 
-import { navigation } from "../model/navigation";
+import { navigation } from "@shared/config/navigation";
 
 import { Link, NavLink } from "react-router";
 
