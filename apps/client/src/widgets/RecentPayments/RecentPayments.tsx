@@ -11,8 +11,8 @@ const payments = [
 
 const RecentPayments = () => {
     return (
-        <section className="bg-(--color-surface) border border-(--color-border-soft) rounded-(--radius-card) p-5">
-            <h2 className="text-base font-bold mb-4">
+        <section className="widget-list">
+            <h2>
                 Последние платежи
             </h2>
 

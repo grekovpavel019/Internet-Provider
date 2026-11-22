@@ -4,7 +4,7 @@ import Card from "@shared/components/Card";
 
 const DashboardStats = (): React.JSX.Element => {
     return (
-        <section className="mb-4 grid grid-cols-[repeat(auto-fit,minmax(min(220px,100%),1fr))] gap-4">
+        <section className="widget-stats">
             <Card
                 label="Клиентов"
                 hint="Всего в базе"

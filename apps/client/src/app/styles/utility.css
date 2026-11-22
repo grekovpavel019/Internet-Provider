@@ -33,3 +33,22 @@
         color: var(--color-sidebar-foreground);
     }
 }
+
+@utility widget-stats {
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+    gap: 16px;
+}
+
+@utility widget-list {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    padding: 20px;
+
+    & h2 {
+        font-weight: 700;
+        margin-bottom: 16px;
+    }
+}
