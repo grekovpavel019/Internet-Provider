@@ -7,13 +7,13 @@ import Header from "@widgets/Header";
 
 const MainLayout = (): React.JSX.Element => {
     return (
-        <div className="h-screen flex flex-row">
+        <div className="h-screen flex flex-row overflow-hidden">
             <SidePanel />
 
             <div className="flex flex-col flex-1 min-w-0">
                 <Header />
 
-                <main className="px-(--page-padding-x) py-(--page-padding-y) flex-1 overlow-auto">
+                <main className="min-h-0 flex-1 overflow-y-auto px-(--page-padding-x) py-(--page-padding-y)">
                     <Outlet />
                 </main>
             </div>

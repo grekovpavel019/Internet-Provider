@@ -21,7 +21,7 @@ const SidePanel = (): React.JSX.Element => {
 
             <div className="nav-caption">УПРАВЛЕНИЕ</div>
 
-            <nav className="px-2.5 flex flex-col gap-0.75 overflow-y-scroll">
+            <nav className="min-h-0 flex-1 overflow-y-auto px-2.5 flex flex-col gap-0.75">
                 {
                     navigation.map((group) => (
                         <React.Fragment key={group.title}>

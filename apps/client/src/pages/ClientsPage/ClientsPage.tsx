@@ -1,6 +1,7 @@
 import React from "react";
 
 import DataTable from "@shared/components/DataTable";
+import TableControls from "@shared/components/TableControls";
 import type { Column } from "@shared/components/DataTable/model/config";
 
 const columns = [
@@ -34,6 +35,10 @@ const ClientsPage = (): React.JSX.Element => {
 
     return (
         <>
+            <h1 className="h1 mb-6">Клиенты</h1>
+
+            <TableControls />
+
             <DataTable 
                 columns={columns}
                 data={clients}

@@ -16,7 +16,7 @@ const Header = (): React.JSX.Element => {
         
 
     return (
-        <header className="px-8 h-17.5 flex items-center justify-between text-(--color-text-secondary) bg-(--color-surface) border-b border-(--color-border-soft)">
+        <header className="px-8 h-17.5 shrink-0 flex items-center justify-between text-(--color-text-secondary) bg-(--color-surface) border-b border-(--color-border-soft)">
             <span>{currentPageLabel}</span>
             <span>Администратор</span>
         </header>
