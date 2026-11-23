@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 
 import DataTable from "@shared/components/DataTable";
 import TableControls from "@shared/components/TableControls";
 import Modal from "@shared/components/Modal";
 import type { Column } from "@shared/components/DataTable/model/config";
+import { useCrudModal } from "@shared/components/Modal/model/useCrudModal";
 
 const columns = [
     { key: "id", title: "ID" },
@@ -28,14 +29,9 @@ const clients = [
 
 type Client = (typeof clients)[number];
 
-type ModalState = 
-    | { type: "add" }
-    | { type: "edit", client: Client }
-    | null;
-
 const ClientsPage = (): React.JSX.Element => {
 
-    const [modal, setModal] = useState<ModalState>(null);
+    const { openAdd, modal, openEdit, close } = useCrudModal<Client>()
 
     const getRowKey = (row: Client) => {
         return row.id;
@@ -45,7 +41,7 @@ const ClientsPage = (): React.JSX.Element => {
         return (
             <div className="pr-2 inline-flex gap-2">
                 <button 
-                    onClick={() => setModal({ type: "edit", client })}
+                    onClick={() => openEdit(client)}
                     className="text-(--color-primary) hover:underline"
                 >
                         Изменить
@@ -60,12 +56,12 @@ const ClientsPage = (): React.JSX.Element => {
             <h1 className="h1 mb-6">Клиенты</h1>
 
             <TableControls 
-                onAdd={() => setModal({ type: "add" })}
+                onAdd={openAdd}
             />
 
             <Modal
                 isOpen={modal !== null}
-                onClose={() => setModal(null)}
+                onClose={close}
                 title={modal?.type === "add" ? "Добавить клиента" : "Изменить клиента"}
             >
                 {
