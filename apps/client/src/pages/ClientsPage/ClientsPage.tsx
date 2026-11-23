@@ -33,6 +33,15 @@ const ClientsPage = (): React.JSX.Element => {
         return row.id;
     }
 
+    const rowActions = () => {
+        return (
+            <div className="pr-2 inline-flex gap-2">
+                <button className="text-(--color-primary) hover:underline">Изменить</button>
+                <button className="text-(--color-danger) hover:underline">Удалить</button>
+            </div>
+        )
+    }
+
     return (
         <>
             <h1 className="h1 mb-6">Клиенты</h1>
@@ -42,7 +51,10 @@ const ClientsPage = (): React.JSX.Element => {
             <DataTable 
                 columns={columns}
                 data={clients}
+
                 getRowKey={getRowKey}
+
+                actions={rowActions}
             />
         </>
     );

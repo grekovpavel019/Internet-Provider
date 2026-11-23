@@ -61,7 +61,7 @@
     --radius-panel: 10px;
 
     /* Shadows */
-    --shadow-card: 0 2px 7px #0f172a05
+    --shadow-card: 0 2px 7px #0f172a05;
     --shadow-panel: 0 4px 16px rgb(32 52 81 / 5%);
 
     /* Layout */

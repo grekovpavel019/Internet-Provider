@@ -1,18 +1,14 @@
+
 import React from "react";
 
 const TableControls = (): React.JSX.Element => {
     return (
-        <div className="mb-5 rounded-(--radius-card) border border-(--color-border) bg-(--color-surface) p-5 shadow-(--shadow-panel)">
+        <div className="mb-5 rounded-(--radius-card) border border-(--color-border-soft) bg-(--color-surface) p-5 shadow-(--shadow-panel)">
 
             <div className="mb-5 flex flex-wrap items-center justify-between gap-4">
-                <div>
-                    <h2 className="font-(--font-heading) text-lg font-semibold text-(--color-foreground)">
-                        Управление таблицей
-                    </h2>
-                    <p className="mt-1 text-xs text-(--color-text-muted)">
-                        Поиск, фильтрация и управление записями
-                    </p>
-                </div>
+                <h2 className="text-lg font-semibold text-(--color-foreground)">
+                    Управление таблицей
+                </h2>
 
                 <div className="flex items-center gap-2">
                     <button
@@ -87,9 +83,9 @@ const TableControls = (): React.JSX.Element => {
 
                     <button
                         type="button"
-                        className="h-(--input-height) cursor-pointer rounded-(--radius-button) border border-(--color-border) px-4 text-sm text-(--color-text-secondary) transition-colors hover:bg-(--color-surface-hover)"
+                        className="h-(--input-height) cursor-pointer rounded-(--radius-button) border border-(--color-primary) px-4 text-sm text-(--color-primary) transition-colors hover:bg-(--color-surface-hover)"
                     >
-                        Сбросить
+                        Применить
                     </button>
 
                 </div>

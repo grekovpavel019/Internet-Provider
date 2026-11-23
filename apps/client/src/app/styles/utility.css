@@ -5,6 +5,11 @@
     font-weight: bold;
 }
 
+@utility h2 {
+    font-size: 22px;
+    font-weight: semibold;
+}
+
 @utility nav-caption {
     padding: 13px 22px;
     font-size: 10px;
