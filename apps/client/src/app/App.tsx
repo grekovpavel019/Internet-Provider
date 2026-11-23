@@ -12,6 +12,7 @@ import AuthPage from "@pages/AuthPage";
 import MainLayout from "./layouts/MainLayout";
 import DashboardPage from "@pages/DashboardPage";
 import ReportsPage from "@pages/ReportsPage";
+import ClientsPage from "@pages/ClientsPage";
 
 const App = (): React.JSX.Element => {
     return (
@@ -22,6 +23,7 @@ const App = (): React.JSX.Element => {
                 <Route element={ <MainLayout /> }>
                     <Route path="/main" element={ <DashboardPage /> } />
                     <Route path="/reports" element={ <ReportsPage /> } />
+                    <Route path="/clients" element={ <ClientsPage /> } />
                 </Route>
             </Routes>
         </BrowserRouter>
