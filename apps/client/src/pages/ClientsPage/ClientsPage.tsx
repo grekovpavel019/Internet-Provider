@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
 import DataTable from "@shared/components/DataTable";
 import TableControls from "@shared/components/TableControls";
+import Modal from "@shared/components/Modal";
 import type { Column } from "@shared/components/DataTable/model/config";
 
 const columns = [
@@ -27,16 +28,28 @@ const clients = [
 
 type Client = (typeof clients)[number];
 
+type ModalState = 
+    | { type: "add" }
+    | { type: "edit", client: Client }
+    | null;
+
 const ClientsPage = (): React.JSX.Element => {
+
+    const [modal, setModal] = useState<ModalState>(null);
 
     const getRowKey = (row: Client) => {
         return row.id;
     }
 
-    const rowActions = () => {
+    const rowActions = (client: Client) => {
         return (
             <div className="pr-2 inline-flex gap-2">
-                <button className="text-(--color-primary) hover:underline">Изменить</button>
+                <button 
+                    onClick={() => setModal({ type: "edit", client })}
+                    className="text-(--color-primary) hover:underline"
+                >
+                        Изменить
+                </button>
                 <button className="text-(--color-danger) hover:underline">Удалить</button>
             </div>
         )
@@ -46,7 +59,19 @@ const ClientsPage = (): React.JSX.Element => {
         <>
             <h1 className="h1 mb-6">Клиенты</h1>
 
-            <TableControls />
+            <TableControls 
+                onAdd={() => setModal({ type: "add" })}
+            />
+
+            <Modal
+                isOpen={modal !== null}
+                onClose={() => setModal(null)}
+                title={modal?.type === "add" ? "Добавить клиента" : "Изменить клиента"}
+            >
+                {
+                    <div>Формочка</div>
+                }
+            </Modal>
 
             <DataTable 
                 columns={columns}

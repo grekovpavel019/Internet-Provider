@@ -1,7 +1,19 @@
-
 import React from "react";
 
-const TableControls = (): React.JSX.Element => {
+type TableControlsProps = {
+    onAdd: () => void;
+}
+
+const TableControls = ({ onAdd }: TableControlsProps): React.JSX.Element => {
+
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+
+        const formData = new FormData(event.currentTarget);
+
+        console.log(Object.fromEntries(formData))
+    }
+
     return (
         <div className="mb-5 rounded-(--radius-card) border border-(--color-border-soft) bg-(--color-surface) p-5 shadow-(--shadow-panel)">
 
@@ -20,6 +32,7 @@ const TableControls = (): React.JSX.Element => {
 
                     <button
                         type="button"
+                        onClick={onAdd}
                         className="h-(--button-height) cursor-pointer rounded-(--radius-button) bg-(--color-primary) px-4 text-sm text-(--color-primary-foreground) transition-colors hover:bg-(--color-primary-hover)"
                     >
                         + Добавить
@@ -28,7 +41,10 @@ const TableControls = (): React.JSX.Element => {
             </div>
 
             <div className="border-t border-(--color-border-soft) pt-4">
-                <div className="flex flex-wrap items-end gap-3">
+                <form 
+                    onSubmit={(event) => handleSubmit(event)}
+                    className="flex flex-wrap items-end gap-3"
+                >
 
                     <div className="flex min-w-50 flex-1 flex-col gap-1.5">
                         <label
@@ -39,6 +55,7 @@ const TableControls = (): React.JSX.Element => {
                         </label>
                         <input
                             type="search"
+                            name="search"
                             id="table-search"
                             placeholder="Поиск по таблице..."
                             className="h-(--input-height) w-full rounded-(--radius-input) border border-(--color-border) bg-(--color-surface) px-3 text-sm text-(--color-foreground) outline-none transition-colors placeholder:text-(--color-text-muted) focus:border-(--color-focus) focus:shadow-(--focus-ring)"
@@ -55,6 +72,7 @@ const TableControls = (): React.JSX.Element => {
                         <select
                             id="table-filter"
                             defaultValue=""
+                            name="filter"
                             className="h-(--input-height) w-full cursor-pointer rounded-(--radius-input) border border-(--color-border) bg-(--color-surface) px-3 text-sm text-(--color-foreground) outline-none focus:border-(--color-focus) focus:shadow-(--focus-ring)"
                         >
                             <option value="">Все записи</option>
@@ -73,6 +91,7 @@ const TableControls = (): React.JSX.Element => {
                         <select
                             id="table-sort"
                             defaultValue=""
+                            name="sort"
                             className="h-(--input-height) w-full cursor-pointer rounded-(--radius-input) border border-(--color-border) bg-(--color-surface) px-3 text-sm text-(--color-foreground) outline-none focus:border-(--color-focus) focus:shadow-(--focus-ring)"
                         >
                             <option value="">По умолчанию</option>
@@ -82,13 +101,13 @@ const TableControls = (): React.JSX.Element => {
                     </div>
 
                     <button
-                        type="button"
+                        type="submit"
                         className="h-(--input-height) cursor-pointer rounded-(--radius-button) border border-(--color-primary) px-4 text-sm text-(--color-primary) transition-colors hover:bg-(--color-surface-hover)"
                     >
                         Применить
                     </button>
 
-                </div>
+                </form>
             </div>
         </div>
     );
