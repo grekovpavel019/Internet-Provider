@@ -8,10 +8,23 @@ import Button from "@shared/components/Button";
 
 import type { Client } from "@entities/client/model/types";
 import { clients, columns } from "@entities/client/model/static";
+import ClientForm from "@features/manage-client";
 
 const ClientsPage = (): React.JSX.Element => {
 
-    const { openAdd, modal, openEdit, close } = useCrudModal<Client>()
+    const { openAdd, modal, openEdit, close } = useCrudModal<Client>();
+
+    const onSubmit = (client: any) => {
+        if (!modal) return;
+
+        if (modal.type === "add") {
+            console.log("Добавлен", client);
+        }
+
+        if (modal.type === "edit") {
+            console.log("Изменен", client)
+        }
+    }
 
     const getRowKey = (row: Client) => {
         return row.id;
@@ -51,7 +64,11 @@ const ClientsPage = (): React.JSX.Element => {
                 title={modal?.type === "add" ? "Добавить клиента" : "Изменить клиента"}
             >
                 {
-                    <div>Формочка</div>
+                    modal !== null && 
+                    <ClientForm 
+                        mode={modal.type}
+                        onSubmit={onSubmit}
+                    />
                 }
             </Modal>
 
