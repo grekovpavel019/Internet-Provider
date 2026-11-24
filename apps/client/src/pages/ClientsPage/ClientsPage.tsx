@@ -9,20 +9,21 @@ import Button from "@shared/components/Button";
 import type { Client } from "@entities/client/model/types";
 import { clients, columns } from "@entities/client/model/static";
 import ClientForm from "@features/manage-client";
+import type { ClientFormValues } from "@features/manage-client/model/types";
 
 const ClientsPage = (): React.JSX.Element => {
 
     const { openAdd, modal, openEdit, close } = useCrudModal<Client>();
 
-    const onSubmit = (client: any) => {
+    const onSubmit = (clientValues: ClientFormValues) => {
         if (!modal) return;
 
         if (modal.type === "add") {
-            console.log("Добавлен", client);
+            console.log("Добавлен", clientValues);
         }
 
         if (modal.type === "edit") {
-            console.log("Изменен", client)
+            console.log("Изменен", modal.item.id, clientValues)
         }
     }
 
@@ -68,6 +69,7 @@ const ClientsPage = (): React.JSX.Element => {
                     <ClientForm 
                         mode={modal.type}
                         onSubmit={onSubmit}
+                        initialValues={modal.type === "edit" ? modal.item : undefined}
                     />
                 }
             </Modal>

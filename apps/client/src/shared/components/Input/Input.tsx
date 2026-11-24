@@ -2,7 +2,7 @@ import React from "react";
 
 type InputProps = React.ComponentPropsWithRef<"input"> & {
     label: string;
-    error?: React.ReactNode;
+    error?: string;
     containerClassName?: string;
 };
 
@@ -23,7 +23,11 @@ const Input = (props: InputProps): React.JSX.Element => {
                 className="h-(--input-height) w-full rounded-(--radius-input) border border-(--color-border) bg-(--color-surface) px-3 text-sm text-(--color-foreground) outline-none transition-colors placeholder:text-(--color-text-muted) focus:border-(--color-focus) focus:shadow-(--focus-ring)"
                 {...rest}
             />
-            <span className="min-h-5 font-bold text-[0.8rem] text-(--color-danger)">{error ? error : " "}</span>
+            {
+                error ? 
+                    <span className="font-bold text-[0.8rem] text-(--color-danger)">{error}</span>
+                    : ""
+            }
         </div>
     );
 };

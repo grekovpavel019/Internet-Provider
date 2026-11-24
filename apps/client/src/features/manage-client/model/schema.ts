@@ -6,6 +6,6 @@ export const ClientFormSchema = z.object({
         /^\+[1-9]\d{9,14}$/,
         "Введите номер в формате +79991234567"
     ),
-    email: z.email(),
+    email: z.email("Неправильный email"),
     address: z.string().trim().min(3, "Минимум 3 символа")
 });

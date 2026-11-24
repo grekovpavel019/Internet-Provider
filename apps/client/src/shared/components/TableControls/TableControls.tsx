@@ -56,7 +56,6 @@ const TableControls = ({ onAdd }: TableControlsProps): React.JSX.Element => {
                         type="search"
                         placeholder="Поиск..."
                         containerClassName="min-w-50"
-                        error="Ошибка"
                     />
 
                     <div className="flex min-w-40 flex-col gap-1.5">
