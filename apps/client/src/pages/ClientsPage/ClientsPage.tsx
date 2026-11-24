@@ -5,6 +5,7 @@ import TableControls from "@shared/components/TableControls";
 import Modal from "@shared/components/Modal";
 import type { Column } from "@shared/components/DataTable/model/config";
 import { useCrudModal } from "@shared/components/Modal/model/useCrudModal";
+import Button from "@shared/components/Button";
 
 const columns = [
     { key: "id", title: "ID" },
@@ -40,13 +41,19 @@ const ClientsPage = (): React.JSX.Element => {
     const rowActions = (client: Client) => {
         return (
             <div className="pr-2 inline-flex gap-2">
-                <button 
+                <Button
                     onClick={() => openEdit(client)}
-                    className="text-(--color-primary) hover:underline"
+                    className="text-(--color-primary)"
+                    variant="ghost"
                 >
                         Изменить
-                </button>
-                <button className="text-(--color-danger) hover:underline">Удалить</button>
+                </Button>
+                <Button 
+                    variant="ghost"
+                    className="text-(--color-danger)"
+                >
+                    Удалить
+                </Button>
             </div>
         )
     }

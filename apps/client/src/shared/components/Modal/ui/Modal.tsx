@@ -1,3 +1,4 @@
+import Button from "@shared/components/Button";
 import React from "react";
 
 type ModalProps = {
@@ -15,13 +16,13 @@ const Modal = ({ isOpen, onClose, children, title }: ModalProps): React.JSX.Elem
                 <div className="w-full max-w-lg p-6 rounded-(--radius-card) shadow-(--shadow-panel) bg-(--color-surface)">
                     <div className="flex justify-between items-center">
                         <h1 className="h1">{title}</h1>
-                        <button
+                        <Button
                             onClick={onClose}
                             type="button"
-                            className="p-2 rounded-sm text-xl text-(--color-primary-foreground) bg-(--color-danger) leading-none hover:bg-(--color-danger-hover)"
+                            variant="danger"
                         >
                             ✕
-                        </button>
+                        </Button>
                     </div>
 
                     {children}

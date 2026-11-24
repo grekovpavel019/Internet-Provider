@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../Button";
 
 type TableControlsProps = {
     onAdd: () => void;
@@ -23,20 +24,20 @@ const TableControls = ({ onAdd }: TableControlsProps): React.JSX.Element => {
                 </h2>
 
                 <div className="flex items-center gap-2">
-                    <button
+                    <Button
                         type="button"
-                        className="h-(--button-height) cursor-pointer rounded-(--radius-button) border border-(--color-border) px-4 text-sm text-(--color-foreground) transition-colors hover:bg-(--color-surface-hover)"
+                        variant="outline"
                     >
                         Печать
-                    </button>
+                    </Button>
 
-                    <button
+                    <Button
                         type="button"
                         onClick={onAdd}
-                        className="h-(--button-height) cursor-pointer rounded-(--radius-button) bg-(--color-primary) px-4 text-sm text-(--color-primary-foreground) transition-colors hover:bg-(--color-primary-hover)"
+                        variant="primary"
                     >
                         + Добавить
-                    </button>
+                    </Button>
                 </div>
             </div>
 
@@ -100,12 +101,12 @@ const TableControls = ({ onAdd }: TableControlsProps): React.JSX.Element => {
                         </select>
                     </div>
 
-                    <button
+                    <Button
                         type="submit"
-                        className="h-(--input-height) cursor-pointer rounded-(--radius-button) border border-(--color-primary) px-4 text-sm text-(--color-primary) transition-colors hover:bg-(--color-surface-hover)"
+                        variant="secondary"
                     >
                         Применить
-                    </button>
+                    </Button>
 
                 </form>
             </div>
