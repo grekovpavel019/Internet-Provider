@@ -1,6 +1,8 @@
 import React from "react";
 import Button from "../Button";
 
+import Input from "../Input";
+
 type TableControlsProps = {
     onAdd: () => void;
 }
@@ -47,21 +49,14 @@ const TableControls = ({ onAdd }: TableControlsProps): React.JSX.Element => {
                     className="flex flex-wrap items-end gap-3"
                 >
 
-                    <div className="flex min-w-50 flex-1 flex-col gap-1.5">
-                        <label
-                            htmlFor="table-search"
-                            className="text-xs font-medium text-(--color-text-secondary)"
-                        >
-                            Поиск
-                        </label>
-                        <input
-                            type="search"
-                            name="search"
-                            id="table-search"
-                            placeholder="Поиск по таблице..."
-                            className="h-(--input-height) w-full rounded-(--radius-input) border border-(--color-border) bg-(--color-surface) px-3 text-sm text-(--color-foreground) outline-none transition-colors placeholder:text-(--color-text-muted) focus:border-(--color-focus) focus:shadow-(--focus-ring)"
-                        />
-                    </div>
+                    <Input 
+                        label="Поиск"
+                        id="search"
+                        name="client-search"
+                        type="search"
+                        placeholder="Поиск..."
+                        containerClassName="min-w-50"
+                    />
 
                     <div className="flex min-w-40 flex-col gap-1.5">
                         <label
