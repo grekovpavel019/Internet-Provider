@@ -10,5 +10,8 @@
     "dev:server": "npm run dev -w apps/server",
     "dev:client": "npm run dev -w apps/client"
   },
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "openapi-typescript": "^7.13.0"
+  }
 }

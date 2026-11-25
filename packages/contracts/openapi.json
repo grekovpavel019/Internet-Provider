@@ -1,0 +1,96 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "NetControl API",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/auth/login": {
+            "post": {
+                "summary": "Вход в приложение",
+                "operationId": "login",
+                "tags": ["Auth"],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/LoginRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Вход выполнен успешно",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LoginResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Некорректные данные запроса",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Внутренняя ошибка сервера",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Role": {
+                "type": "string",
+                "enum": ["admin", "user", "guest"]
+            },
+
+            "LoginRequest": {
+                "type": "object",
+                "properties": {
+                    "role": {
+                        "$ref": "#/components/schemas/Role"
+                    }
+                },
+                "required": ["role"]
+            },
+
+            "LoginResponse": {
+                "type": "object",
+                "properties": {
+                    "role": {
+                        "$ref": "#/components/schemas/Role"
+                    }
+                },
+                "required": ["role"]
+            },
+
+            "ErrorResponse": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "type": "string"
+                    }
+                },
+                "required": ["message"]
+            }
+        }
+    }
+}
